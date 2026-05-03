@@ -68,3 +68,61 @@ llm_p/
 
 ## Подготовка окружения, создание конфигурации и запуск проекта
 
+Клонируйте репозиторий локально и перейдите в него:
+
+```shell
+git clone https://github.com/RazorRZZ/llm-p.git
+cd llm-p
+```
+
+Установите [uv](https://docs.astral.sh/uv/) (в случае возникновения приблем при установке можно воспользоваться документацией по ссылке):
+
+```shell
+pip install uv
+```
+
+Создайте виртуальное окружение:
+
+```shell
+uv venv
+```
+
+Активируйте виртуальное окружение:
+
+```shell
+source .venv/bin/activate #MacOS/Linux
+.venv\Scripts\activate.bat #Windows
+```
+
+Установите зависимости:
+
+```shell
+uv pip install -r <(uv pip compile pyproject.toml)
+```
+
+Скопируйте конфигурационный файл `.env`
+
+```shell
+cp .env.example .env
+```
+
+Зарегистрируйтесь на [OpenRouter](https://openrouter.ai/) и [получите API ключ](https://openrouter.ai/settings/keys).
+
+Добавьте свой ключ в переменную `OPENROUTER_API_KEY` в файле `.env`.
+
+По умолчанию для OpenRouter указана модель [openrouter/free](https://openrouter.ai/openrouter/free), но Вы можете
+изменить её на другую в переменной `OPENROUTER_MODEL`.
+
+Для запуска проекта активируйте окружение `.venv` и вызовите команду:
+
+```shell
+uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+SwaggerUI с OpenAPI документацией будет доcтупен по адресу http://127.0.0.1:8000/docs. [http://0.0.0.0:8000/docs или http://localhost:8000/docs , если нет доступа]
+
+## Демонстрация работы (скриншоты)
+
+1. SwaggerUI
+![alt text](image.png)
+
