@@ -124,6 +124,7 @@ SwaggerUI с OpenAPI документацией будет доcтупен по 
 ## Демонстрация работы (скриншоты)
 
 1. SwaggerUI
-![alt text](image.png)
+
+![SwaggerUI](image.png)
 
 
