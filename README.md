@@ -127,4 +127,30 @@ SwaggerUI с OpenAPI документацией будет доcтупен по 
 
 ![SwaggerUI](image.png)
 
+2. Регистрация пользователя (POST /auth/register)
 
+![User registration](image-1.png)
+
+3. Логин и получение JWT (POST /auth/login)
+
+При неправильном логине или пароле:
+![False email or password](image-2.png)
+
+Успешный вход:
+![Success auth](image-3.png)
+
+4. Авторизация через Swagger
+
+![Swagger auth](image-4.png)
+
+5. Профиль пользователя (GET /auth/me)
+
+![User profile](image-5.png)
+
+6. Запросы к LLM (POST /chat) и история диалога (GET /chat/history)
+
+![Chat history](image-7.png)
+
+7. Удаление истории (DELETE /chat/history)
+
+![History deleted](image-8.png)
