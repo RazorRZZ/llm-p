@@ -1,4 +1,4 @@
-# llm-p - Построение защищённого API для работы с LLM
+# llm-p
 
 Проект "Построение защищённого API для работы с большой языковой моделью" - первое домашнее задание курса "Принципы разработки на языке Python" студента группы М25-555 Шакурова Егора (М255-11-43).
 
@@ -17,53 +17,54 @@
 
 ```
 llm_p/
-├── pyproject.toml
-├── README.md
-├── .env.example
+├── pyproject.toml                 # Зависимости проекта (uv)
+├── README.md                      # Описание проекта и запуск
+├── .env.example                   # Пример переменных окружения
 │
 ├── app/
-│   ├── __init__.py
-│   ├── main.py
+│   ├── init.py
+│   ├── main.py                    # Точка входа FastAPI
 │   │
-│   ├── core/
-│   │   ├── __init__.py
-│   │   ├── config.py
-│   │   ├── security.py
-│   │   └── errors.py
+│   ├── core/                      # Общие компоненты и инфраструктура
+│   │   ├── init.py
+│   │   ├── config.py              # Конфигурация приложения (env → Settings)
+│   │   ├── security.py            # JWT, хеширование паролей
+│   │   └── errors.py              # Доменные исключения
 │   │
-│   ├── db/
-│   │   ├── __init__.py
-│   │   ├── base.py
-│   │   ├── session.py
-│   │   └── models.py
+│   ├── db/                        # Слой работы с БД
+│   │   ├── init.py
+│   │   ├── base.py                # DeclarativeBase
+│   │   ├── session.py             # Async engine и sessionmaker
+│   │   └── models.py              # ORM-модели (User, ChatMessage)
 │   │
-│   ├── schemas/
-│   │   ├── __init__.py
-│   │   ├── auth.py
-│   │   ├── user.py
-│   │   └── chat.py
+│   ├── schemas/                   # Pydantic-схемы (вход/выход API)
+│   │   ├── init.py
+│   │   ├── auth.py                # Регистрация, логин, токены
+│   │   ├── user.py                # Публичная модель пользователя
+│   │   └── chat.py                # Запросы и ответы LLM
 │   │
-│   ├── repositories/
-│   │   ├── __init__.py
-│   │   ├── users.py
-│   │   └── chat_messages.py
+│   ├── repositories/              # Репозитории (ТОЛЬКО SQL/ORM)
+│   │   ├── init.py
+│   │   ├── users.py               # Доступ к таблице users
+│   │   └── chat_messages.py       # Доступ к истории чатов
 │   │
-│   ├── services/
-│   │   ├── __init__.py
-│   │   └── openrouter_client.py
+│   ├── services/                  # Внешние сервисы
+│   │   ├── init.py
+│   │   └── openrouter_client.py   # Клиент OpenRouter / LLM
 │   │
-│   ├── usecases/
-│   │   ├── __init__.py
-│   │   ├── auth.py
-│   │   └── chat.py
+│   ├── usecases/                  # Бизнес-логика приложения
+│   │   ├── init.py
+│   │   ├── auth.py                # Регистрация, логин, профиль
+│   │   └── chat.py                # Логика общения с LLM
 │   │
-│   └── api/
-│       ├── __init__.py
-│       ├── deps.py
-│       ├── routes_auth.py
-│       └── routes_chat.py
+│   └── api/                       # HTTP-слой (тонкие эндпоинты)
+│       ├── init.py
+│       ├── deps.py                # Dependency Injection
+│       ├── routes_auth.py         # /auth/*
+│       └── routes_chat.py         # /chat/*
 │
-└── app.db
+└── app.db                         # SQLite база (создаётся при запуске)
 ```
 
 ## Подготовка окружения, создание конфигурации и запуск проекта
+
