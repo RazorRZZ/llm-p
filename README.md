@@ -75,7 +75,7 @@ git clone https://github.com/RazorRZZ/llm-p.git
 cd llm-p
 ```
 
-Установите [uv](https://docs.astral.sh/uv/) (в случае возникновения проблем при установке можно воспользоваться документацией по ссылке):
+Установите [uv](https://docs.astral.sh/uv/) (в случае возникновения проблем воспользуйтесь документацией по ссылке):
 
 ```shell
 pip install uv
@@ -109,9 +109,8 @@ cp .env.example .env
 Зарегистрируйтесь на [OpenRouter](https://openrouter.ai/) и [получите API ключ](https://openrouter.ai/settings/keys).
 
 Добавьте свой ключ в переменную `OPENROUTER_API_KEY` в файле `.env`.
-
-По умолчанию для OpenRouter указана модель [openrouter/free](https://openrouter.ai/openrouter/free), но Вы можете
-изменить её на другую в переменной `OPENROUTER_MODEL`.
+По умолчанию для OpenRouter указана модель [openrouter/free](https://openrouter.ai/openrouter/free), но можно
+изменить её на любую другую в переменной `OPENROUTER_MODEL`.
 
 Для запуска проекта активируйте окружение `.venv` и вызовите команду:
 
