@@ -1,0 +1,12 @@
+.venv/
+/.venv/
+__pycache__/
+*.pyc
+.env
+/.env
+app.db
+*.db
+.ruff_cache/
+.vs/
+requirements.txt
+*.lock
