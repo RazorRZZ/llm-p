@@ -119,7 +119,7 @@ uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 SwaggerUI с OpenAPI документацией будет доcтупен по адресу http://127.0.0.1:8000/docs. 
-[http://0.0.0.0:8000/docs или http://localhost:8000/docs , если нет доступа]
+/[http://0.0.0.0:8000/docs или http://localhost:8000/docs , если нет доступа]
 
 ## Демонстрация работы (скриншоты)
 
